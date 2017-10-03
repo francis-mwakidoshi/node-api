@@ -1,0 +1,26 @@
+{
+  "name": "node-api",
+  "version": "1.0.0",
+  "description": "Rest api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francis-mwakidoshi/node-api.git"
+  },
+  "dependencies": {
+   "express": "~4.16.1",
+   "morgan": "~1.9.0",
+   "mongoose" : "~4.11.14",
+   "body-parser": "~1.18.2"
+ },
+  "author": "francis mwakidoshi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francis-mwakidoshi/node-api/issues"
+  },
+  "homepage": "https://github.com/francis-mwakidoshi/node-api#readme"
+}
