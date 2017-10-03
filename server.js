@@ -6,6 +6,9 @@ var express    = require('express');
 var bodyParser = require('body-parser');
 var app        = express();
 var morgan     = require('morgan');
+var mongoose   = require('mongoose');
+//var Promise = require('promise');
+//const assert = require('assert');
 
 // configure app
 app.use(morgan('dev')); // log requests to the console
@@ -17,6 +20,7 @@ app.use(bodyParser.json());
 var port     = process.env.PORT || 8080; // set our port
 
 // DATABASE SETUP
+
 var mongoose   = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/API'); // connect to our database
 
@@ -46,7 +50,7 @@ router.use(function(req, res, next) {
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 router.get('/', function(req, res) {
-	res.json({ message: 'hooray! welcome to our api!' });	
+	res.json({ message: 'hooray! welcome to our api!' });
 });
 
 // on routes that end in /bears
@@ -55,7 +59,7 @@ router.route('/bears')
 
 	// create a bear (accessed at POST http://localhost:8080/bears)
 	.post(function(req, res) {
-		
+
 		var bear = new Bear();		// create a new instance of the Bear model
 		bear.name = req.body.name;  // set the bears name (comes from the request)
 
@@ -66,7 +70,7 @@ router.route('/bears')
 			res.json({ message: 'Bear created!' });
 		});
 
-		
+
 	})
 
 	// get all the bears (accessed at GET http://localhost:8080/api/bears)
